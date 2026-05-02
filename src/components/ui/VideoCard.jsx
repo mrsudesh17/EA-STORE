@@ -5,9 +5,14 @@ import { Play } from 'lucide-react';
 export const VideoCard = ({ account }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Extract video ID from embed URL
-  const videoIdMatch = account.videoUrl.match(/embed\/([^?]+)/);
-  const videoId = videoIdMatch ? videoIdMatch[1] : null;
+  // Extract video ID from various YouTube URL formats
+  const extractVideoId = (url) => {
+    if (!url) return null;
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+  const videoId = extractVideoId(account.videoUrl);
 
   // Generate dynamic WhatsApp message with encoded URI
   const message = `Hi, I'm interested in ${account.id} (₹${account.price})`;
@@ -68,7 +73,7 @@ export const VideoCard = ({ account }) => {
               </>
             ) : (
               <iframe
-                src={`${account.videoUrl}?autoplay=1&mute=1&rel=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/${videoId || ''}?autoplay=1&mute=1&rel=0&modestbranding=1`}
                 title="Maddy BGMI Store Preview"
                 className="w-full h-full border-none"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

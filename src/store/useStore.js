@@ -24,7 +24,37 @@ const initialReviews = [
     date: "April 2026",
     stars: 5,
     description: "Got my account within 5 minutes of payment. Maddy bhai is 100% legit. Rare X-suit was there as promised. Will come back again!",
-    createdAt: Date.now()
+    createdAt: Date.now() - 10000
+  },
+  {
+    id: "REV-102",
+    name: "Rithik S",
+    initials: "RS",
+    color: "from-green-400 to-green-600",
+    date: "March 2026",
+    stars: 5,
+    description: "Sold my account here. Got paid immediately after transfer. Transparent process and no issues. Highly recommended for sellers too!",
+    createdAt: Date.now() - 20000
+  },
+  {
+    id: "REV-103",
+    name: "Praveen V",
+    initials: "PV",
+    color: "from-blue-400 to-blue-600",
+    date: "March 2026",
+    stars: 5,
+    description: "Custom account was exactly what I asked for. Maddy found exactly the skins I wanted within my ₹15,000 budget. Super happy!",
+    createdAt: Date.now() - 30000
+  },
+  {
+    id: "REV-104",
+    name: "Mohammed K",
+    initials: "MK",
+    color: "from-purple-500 to-purple-700",
+    date: "Feb 2026",
+    stars: 5,
+    description: "Been buying from Maddy store for 2 years. Always trusted, always fast, always genuine. Nobody beats this store in India!",
+    createdAt: Date.now() - 40000
   }
 ];
 

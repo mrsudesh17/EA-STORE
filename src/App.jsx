@@ -12,6 +12,7 @@ const Sell = lazy(() => import('./pages/Sell'));
 const Recovery = lazy(() => import('./pages/Recovery'));
 const Reviews = lazy(() => import('./pages/Reviews'));
 const Admin = lazy(() => import('./pages/Admin'));
+const Connect = lazy(() => import('./pages/Connect'));
 
 const PageLoader = () => (
   <div className="pt-[100px] px-[5%] min-h-screen">
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/sell" element={<Sell />} />
                 <Route path="/recovery" element={<Recovery />} />
                 <Route path="/reviews" element={<Reviews />} />
+                <Route path="/connect" element={<Connect />} />
                 <Route path="/admin" element={<Admin />} />
               </Routes>
             </Suspense>

@@ -91,7 +91,7 @@ const Sell = () => {
                 { i: '🎥', t: 'Record a video of your account', s: "Show everything — Gun Labs, Outfits, Rank, Inventory." },
                 { i: '📝', t: 'Share details or give login for evaluation', s: "We'll assess the account value quickly and fairly." },
                 { i: '⚡', t: 'Get an instant price offer', s: "⚠️ May be slightly lower than market value — you're paying for speed and certainty." },
-                { i: '✅', t: 'Accept and get paid instantly', s: "We secure the account • Payment released immediately after verification 💰" }
+                { i: '✅', t: 'Accept and get paid instantly', s: "We secure the account • Payment released immediately after verification 💰\n🔐 Single login accounts preferred for instant sale." }
               ].map((step, idx) => (
                 <li key={idx} className="flex items-start gap-4 pb-4 border-b border-border last:border-0 last:pb-0">
                   <div className="min-w-[32px] h-[32px] rounded-full bg-gradient-to-br from-green-400 to-green-600 text-black font-heading text-[15px] font-bold flex items-center justify-center mt-0.5 shadow-md shrink-0">
@@ -120,6 +120,46 @@ const Sell = () => {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* WHY SELL WITH US */}
+        <div className="mt-12">
+          <div className="text-[11px] font-semibold text-orange tracking-[3px] uppercase mb-2">Why Sell With Us</div>
+          <h2 className="font-heading text-3xl font-bold mb-6">🛡️ Why <span className="text-gradient">Choose</span> Maddy Store?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="flex items-center gap-3 bg-card border border-gold-borderAlt p-4 rounded-xl">
+              <div className="w-6 h-6 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center shrink-0 text-xs">✔</div>
+              <span className="text-sm font-bold">Trusted Since 2019</span>
+            </div>
+            <div className="flex items-center gap-3 bg-card border border-gold-borderAlt p-4 rounded-xl">
+              <div className="w-6 h-6 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center shrink-0 text-xs">✔</div>
+              <span className="text-sm font-bold">Safe &amp; Secure Handling</span>
+            </div>
+            <div className="flex items-center gap-3 bg-card border border-gold-borderAlt p-4 rounded-xl">
+              <div className="w-6 h-6 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center shrink-0 text-xs">✔</div>
+              <span className="text-sm font-bold">Transparent Pricing Always</span>
+            </div>
+            <div className="flex items-center gap-3 bg-card border border-gold-borderAlt p-4 rounded-xl">
+              <div className="w-6 h-6 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center shrink-0 text-xs">✔</div>
+              <span className="text-sm font-bold">Fast Payouts After Sale</span>
+            </div>
+          </div>
+        </div>
+
+        {/* NEED HELP */}
+        <div className="mt-10 p-7 md:p-8 bg-card border border-gold-borderAlt rounded-2xl flex items-center justify-between flex-wrap gap-5">
+          <div>
+            <div className="text-[11px] font-semibold text-orange tracking-[3px] uppercase mb-1.5">📩 Need Assistance?</div>
+            <p className="text-sm text-muted max-w-[400px]">Want help evaluating your account? Contact us for quick support and a fair offer.</p>
+          </div>
+          <a 
+            href={`${CONTACT.whatsappLink}?text=${encodeURIComponent("Hi! I need help selling my BGMI account.")}`}
+            target="_blank" 
+            rel="noreferrer" 
+            className="font-heading text-[14px] font-bold tracking-[1.5px] uppercase px-6 py-3 rounded-lg flex items-center gap-2 bg-gradient-to-br from-gold to-orange text-black hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(255,107,53,0.35)] transition-all"
+          >
+            💬 WhatsApp {CONTACT.whatsappNumber ? `+${CONTACT.whatsappNumber.replace(/^91/, '91 ')}` : ''}
+          </a>
         </div>
 
       </section>

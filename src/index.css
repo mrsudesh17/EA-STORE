@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-text font-body text-[15px] leading-relaxed overflow-x-hidden min-h-screen;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Hide scrollbar for account details but allow scroll */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #080A0F;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255,215,0,0.18);
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-gold to-orange;
+  }
+  
+  .glass-nav {
+    background: rgba(8,10,15,0.95);
+    backdrop-filter: blur(24px);
+  }
+}
